@@ -8,15 +8,21 @@ This modification of SimpleTimer (I call it AgnosticTimer, but renaming it to Si
 
 ### Basic Usage
 You can create a new timer like so:
-    SimpleTimer<MySpecialClass> timer;
+```
+SimpleTimer<MySpecialClass> timer;
+```
 Where 'MySpecialClass' is the name of the class the timer will be calling to for its callbacks.
 
 Then, simply call setInterval to set up the interval and callback for the timer:
-    timer.setInterval(3000, this, &MySpecialClass::timerElapsed);
+```
+timer.setInterval(3000, this, &MySpecialClass::timerElapsed);
+```
 The first argument is the number of milliseconds for the timer, the second is a reference to the class that holds the function you wish to call (always 'this', if you're calling it from within the class), and the third argument is a reference to the member function that will be called each time the timer elapses.
 
 Then, make sure to call the run method from within your loop() function, again passing in a reference to the class that holds your callback:
-    timer.run(this);
+```
+timer.run(this);
+```
 
 ### Original Uploader
 Derek Chafin  
